@@ -65,6 +65,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])){
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password" name="password" >
                     </div>
+
+                       <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" >
+                    </div>
+
                      <div class="form-group">
                         <select class="form-control"  name="role" id="">
                             <option value="">Role</option>

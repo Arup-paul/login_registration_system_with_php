@@ -17,6 +17,7 @@ class User{
             $username    = $data['username'];
             $email       = $data['email'];            
             $password    = $data['password'];           
+            $confirmpassword    = $data['confirmpassword'];           
             $role        = $data['role'];
             $check_email = $this->emailCheck($email);
 
@@ -44,6 +45,11 @@ class User{
 
             if($check_email == true){
                 $msg = "<div class='alert alert-danger'><strong>Error!</strong>  Email already exists!</div>";
+                return $msg;
+            }
+
+             if($password != $confirmpassword){
+                $msg = "<div class='alert alert-danger'><strong>Error!</strong>  Password do Not Match!</div>";
                 return $msg;
             }
 
