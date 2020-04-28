@@ -2,6 +2,9 @@
    include_once 'inc/header.php';
    include_once 'inc/sidebar.php';
 
+   // verify the user using token
+
+
 ?>
 
 

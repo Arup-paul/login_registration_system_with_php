@@ -6,6 +6,9 @@ $filepath = realpath(dirname(__FILE__));
 include_once $filepath.'/lib/Session.php';
  Session::init();
  Session::checkLogin();
+  
+
+
 ?>
 
 <?php
@@ -14,6 +17,12 @@ $user = new User();
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])){
    $userLogin = $user->userLogin($_POST);
 }
+
+
+if(isset($_GET['token'])){
+    $token = $_GET['token'];
+    $user->verifyUser($token);
+} 
 
 
 ?>
