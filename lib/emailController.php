@@ -6,7 +6,7 @@ require_once 'vendor/autoload.php';
 // Create the Transport
 $transport = ( new Swift_SmtpTransport( 'smtp.gmail.com', 465, 'ssl' ) )
     ->setUsername( 'set gmail' )
-    ->setPassword( 'set pass' )
+    ->setPassword( 'set password' )
 ;
 
 // Create the Mailer using your created Transport
@@ -34,7 +34,7 @@ function sendVerificationEmail( $userEmail, $token ) {
 
 // Create a message
     $message = ( new Swift_Message( 'Verify your Email Address' ) )
-        ->setFrom( 'set gmail' )
+        ->setFrom('set gmail' )
         ->setTo( $userEmail )
         ->setBody( $body, 'text/html' );
 

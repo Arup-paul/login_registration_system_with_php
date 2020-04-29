@@ -337,15 +337,7 @@ class User {
 
     public function verifyUser( $token ) {
 
-        $sql   = "SELECT * FROM users WHERE token = '$token' LIMIT 1  ";
-        $query = $this->db->pdo->prepare( $sql );
-        $query->bindValue( ":token", $token );
-        $query->execute();
-        if ( $query->rowCount() > 0 ) {
-            return true;
-        } else {
-            return false;
-        }
+        
 
         $sql = "UPDATE users SET activationcode = 1  WHERE token = '$token'";
 
